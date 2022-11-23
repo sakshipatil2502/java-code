@@ -1,0 +1,671 @@
+AVERAGE OF NUMBERS
+PRACTICAL NO 1
+
+package Sakshipatil.com;
+import java.util.Scanner;
+public class Example1 {
+	public static void main(String[]args){
+		int n,num,sum=0,i;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter how many number");
+		n=sc.nextInt();
+		System.out.println("Enter numbers");
+		for(i=0;i<n;i++) {
+			num=sc.nextInt();
+			sum+=num;
+			
+		}
+		double average = (double)sum/n;
+		System.out.println("Average of numbers" + n + "is" + average);
+	}
+}
+
+PRACTICAL NO 1-2
+PRIME NO
+
+package Sakshipatil.com;
+import java.util.Scanner;
+public class Example1 {
+	public static void main(String[]args){
+		int flag=0;
+		System.out.println("Program for finding prime numbers from the range of 2 to 50");
+		for(int i=1;i<50;i++) {
+			for(int j=2;j<i;j++) {
+				if(i%j!=0) {
+					flag=1;
+				}
+				else {
+					flag=0;
+					break;
+				}
+			}
+			if(flag==1) {
+				System.out.println(i + "is Prime Number");
+			}
+		}
+		
+	}
+
+}
+PRACTICAL 1-3
+FACTORIAL OF NUM
+	
+package Sakshipatil.com;
+import java.util.Scanner;
+public class Example1 {
+	public static void main(String[]args){
+		int num=20;
+		long fact=1;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter factorial of number:");
+		for(int i=1;i<num;i++) {
+			fact*=i;
+			}
+		System.out.println("The Factorial of " + num + "is" + fact);
+	}
+}
+
+CALCULLATOR
+
+package Sakshipatil.com;
+import java.util.Scanner;
+public class Claculator {
+double first_no;
+double second_no;
+void get_firstno()
+{
+System.out.println("\n Enter the first no:");
+Scanner in= new Scanner(System.in);
+first_no=in.nextInt();
+}
+void get_secondno()
+{
+System.out.println("\n Enter the second no:");
+Scanner in= new Scanner(System.in);
+second_no=in.nextInt();
+}
+ public double addition() {
+	 return(first_no +  second_no);
+ }
+ public double substraction() {
+	 return(first_no -  second_no);
+ }
+ public double multiplication() {
+	 return(first_no *  second_no);
+ }
+ public double division() {
+	 return(first_no / second_no);
+ }
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int choice;
+		Claculator obj = new Claculator();
+		obj.get_firstno();
+		obj.get_secondno();
+		
+		do {
+			System.out.println("\n 1.addition \n 2.substraction \n 3.multiplication \n 4.division \n 5.exist");
+			System.out.println("Enter your choice:");
+			Scanner in = new Scanner(System.in);
+			choice =in.nextInt();
+			
+			switch(choice) {
+			case 1:System.out.println("Result ="+obj.addition());
+			break;
+			case 2:System.out.println("Result ="+obj.substraction());
+			break;
+			case 3:System.out.println("Result ="+obj.multiplication());
+			break;
+			case 4:System.out.println("Result ="+obj.division());
+			break;
+			}
+		}
+		while(choice<5);
+		
+		}
+	}
+RECTANGLE TWO CLASSES
+PRACTICAL NO3
+
+import java.util.Scanner;
+public class Rectangle1 {
+	
+		double length;
+		double width;
+		double area;
+		String color;
+		
+		Rectangle1(double l,double w,String c) {
+			
+			length =l;
+			width=w;
+			color = new String(c);
+			}
+		
+		double getlength() {
+			return length;
+          }
+		double getwidth() {
+			return width;
+          }
+		String getcolor() {
+			return color;
+		}
+		double getArea() {
+			area=length*width;
+			return area;
+          }
+
+}
+import java.util.Scanner;
+public class Match2 {
+
+	public static void main(String[] args) {
+		Rectangle1 rect1 = new Rectangle1(20,30,"Red");
+		Rectangle1 rect2 = new Rectangle1(20,30,"Red");
+		if(rect1.getArea()==rect2.getArea() && rect1.getcolor().equals(rect2.getcolor())) {
+			System.out.println("Both Rectangles are Matching");
+		}
+			else {
+				System.out.println("Both Rectangles are not matching");
+			}
+		}
+	}
+
+
+
+PRACTICAL 4
+METHOD OVERLOADING
+
+package Sakshipatil.com;
+import java.util.*;
+public class Overloading1 {
+	public static void add(int a,int b) {
+		System.out.println(a+b);
+	}
+	public static void add(double a,double b) {
+		System.out.println(a+b);
+	}
+	public static void add(int a,int b,int c) {
+		System.out.println(a+b+c);
+	}
+
+	public static void main(String[] args) {
+		Overloading1 obj = new Overloading1();
+		obj.add(33,8);
+		obj.add(1.1, 3.2);
+		obj.add(2, 7,8);
+
+	}
+
+}
+
+CONSTRUCTOR OVERLOADING
+
+package Sakshipatil.com;
+import java.util.*;
+public class Overloading1 {
+	int id;
+	String name;
+	Overloading1(){
+		System.out.println("Default Constructor");
+	}
+   Overloading1(int a,String b){
+	   int id=a;
+	   String name =b;
+   }
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+Overloading1 obj = new Overloading1();
+System.out.println("Student ID IS"+ obj.id + "Student Name is" + obj.name);
+Overloading1 obj2 = new Overloading1();
+System.out.println("Student ID IS"+ obj2.id + "Student Name is" + obj2.name);
+	}
+	}
+
+package Sakshipatil.com;
+import java.util.Arrays;
+public class Exp5 {
+ static void sortStringArray(String[]arr) {
+	 int n=4;
+	 String temp;
+	 for(int i=0;i<n;i++) {
+		 
+		 for(int j=i+1;j<n;j++) {
+			if(arr[i].compareTo(arr[j])>0) {
+				temp=arr[i];
+				arr[i]=arr[j];
+				arr[j]=temp;
+			}
+		 }
+	 }
+	 System.out.println("\n Sorted String Array:\n\t"+Arrays.toString(arr));
+ }
+ static void sortIntegerArray(String[]arr) {
+	
+	 for(int i=0;i<arr.length;i++) {
+		 
+		 for(int j=i+1;j<arr.length;j++) {
+			 int temp;
+			if(arr[i]>arr[j]) {
+				temp=arr[i];
+				arr[i]=arr[j];
+				arr[j]=temp;
+			}
+		 }
+	 }
+	 System.out.println("\n Sorted String Array:\n\t"+Arrays.toString(arr));
+ }
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
+
+
+5. Write Programs in Java to sort i) List of integers ii) List of names. The objective of this
+assignment is to learn Arrays and Strings in Java
+
+
+import java.util.Scanner;
+public class Sort {
+void sortint(int a[])
+{
+for(int i=0;i<a.length;i++)
+{
+for(int j=i+1;j<a.length;j++)
+{
+if(a[i]>a[j])
+{
+int temp=a[i];
+a[i]=a[j];
+a[j]=temp;
+}
+}
+}
+}
+void sortstring(String str[])
+{
+String temp;
+for(int i=0;i<str.length;i++)
+{
+for(int j=i+1;j<str.length;j++)
+{
+if(str[i].compareTo(str[j])>0)
+{
+temp=str[i];
+str[i]=str[j];
+str[j]=temp;
+}
+}
+}
+}
+public static void main(String[] args) {
+Sort obj= new Sort();
+Scanner in= new Scanner(System.in);
+int choice;
+do
+{
+System.out.println(" 1.sort int\n 2.sort String");
+System.out.println("Enter your choice");
+int ch = in.nextInt();
+switch(ch)
+{
+case 1:
+System.out.println("Enter the size of the array");
+int n = in.nextInt();
+System.out.println("Enter the numbers");
+int arr[] = new int[n];
+for(int i=0;i<n;i++)
+arr[i]=in.nextInt();
+obj.sortint(arr);
+System.out.println("Sorted numbers");
+for(int i=0; i<n;i++)
+System.out.println(arr[i]+"");
+break;
+case 2:
+String names[] = { "ram", "shyam",
+"seeta","geeta","reeta"};
+obj.sortstring(names);
+for(int i=0;i<names.length;i++)
+System.out.println(names[i] + " ");
+break;
+}
+System.out.println("\n do you want to continue 1 or 0");
+choice = in.nextInt();
+}
+while (choice==1);
+}
+}
+
+6. Write a Program in Java to add two matrices. The objective of this assignment is to learn Arrays
+in Java
+import java.util.Scanner;
+public class Sortarr
+{
+public static void main(String[] args)
+{
+Scanner s = new Scanner(System.in);
+System.out.print ("Enter number of rows: ");
+int rows = s.nextInt();
+System.out.print ("Enter number of columns: ");
+int columns = s.nextInt();
+int[][] a = new int[rows] [columns];
+int[][] b = new int[rows] [columns];
+System.out.println("Enter the first matrix");
+for (int i = 0; i < rows; i++)
+{
+for (int j=0; j<columns; j++)
+{
+a[i][j] = s.nextInt();
+}
+}
+System.out.println("Enter the second matrix");
+for (int i = 0 ; i < rows; i++)
+{
+for (int j = 0 ; j<columns; j++)
+{
+b[i][j]=s.nextInt();
+}
+}
+int[] [] c = new int[rows] [columns];
+for (int i = 0 ; i < rows; i++)
+{
+for (int j = 0 ; j < columns; j++)
+{
+c[i][j]= a[i][j]+ b[i][j];
+}
+}
+System.out.println("The sum of the two matrices is");
+for (int i = 0 ; i < rows; i++)
+{
+for (int j = 0; j<columns; j++)
+{
+System.out.print (c[i][j] + " ");
+}
+System.out.println();
+}
+}
+}
+
+
+7. Write a program in Java to create a player class. Inherit the classes Cricket_player,
+Football_player and Hockey_player from player class. The objective of this assignment is to learn
+the concepts of inheritance in Java.
+
+import java.util.Scanner;
+class Player
+{
+String name,gname,add,type;
+int age,nogp;
+Scanner s =new Scanner(System.in);
+void get_data()
+{
+System.out.println("Enter the details name,age,address,gamename,no
+of games palyed and type");
+name=s.next();
+age=s.nextInt();
+add= s.next();
+gname=s.next();
+nogp=s.nextInt();
+type=s.next();
+}
+void Display()
+{
+System.out.println("Name="+ name+
+"\nAge="+age+"\nAddress="+add+"\nGame name"+gname+"\nno of games
+played"+nogp+"\ntype"+type);
+}
+}
+class Cplayer extends Player
+{
+int trun,twic;
+void get_data()
+{
+super.get_data();
+System.out.println("enter the totel runs and wickets");
+trun= s.nextInt();
+twic=s.nextInt();
+}
+void Display()
+{
+super.Display();
+System.out.println("Total runs"+trun+"\ntotal wickwts"+twic);
+}
+}
+class Fplayer extends Player
+{
+int nog;
+void get_data()
+{
+super.get_data();
+System.out.println("enter the no 0of goals");
+nog= s.nextInt();
+}
+void Display()
+{
+super.Display();
+System.out.println("number of goals"+nog);
+}
+}
+class Hplayer extends Player
+{
+int nog;
+void get_data()
+{
+super.get_data();
+System.out.println("enter the no 0of goals");
+nog= s.nextInt();
+}
+void Display()
+{
+super.Display();
+System.out.println("number of goals"+nog);
+}
+}
+public class Exp7
+{
+public static void main(String args[])
+{
+int choice;
+Scanner s =new Scanner(System.in);
+System.out.println("Enter the Sport Name: \n 1. Cricket \n 2.
+Football \n 3. Hockey");
+choice = s.nextInt();
+switch (choice)
+{
+case 1:
+System.out.println("Cricket Sports: ");
+Cplayer c=new Cplayer();
+c.get_data();
+c.Display();
+break;
+case 2:
+System.out.println("Football Sports: ");
+Fplayer f=new Fplayer();
+f.get_data();
+f.Display();
+break;
+case 3:
+System.out.println("Hockey Sports: ");
+Hplayer h=new Hplayer();
+h.get_data();
+h.Display();
+break;
+default:
+System.out.println("Envalid Choice");
+}
+}
+}
+
+EXP 8
+INTERFACE
+
+public interface Teacher 
+{
+	void assignment();
+	void practical();
+	int marks();	
+}
+public class Student implements Teacher 
+{
+	public void assignment() 
+	{
+		System.out.println("I am doing assignment");
+	}
+	public void practical() 
+	{
+		System.out.println("I am doing practical");	
+	}
+	public int marks()
+	{
+		return 90;
+	}
+}public
+class Test 
+{
+	public static void main(String[] args)
+	{
+		Student s=new Student();
+		s.assignment();
+		s.practical();
+		System.out.println("Marks obtained = " +s.marks());
+	}
+}
+
+EXP 9-TRY CATCH
+
+public class Main1
+{
+public static void main(String[] args)
+{
+try
+{
+int[] myNo= {1,2,3};
+System.out.println(myNo[1]);
+}
+catch(Exception e)
+{
+System.out.println("Something went wrong");
+}
+}
+}
+
+TRY-CATCH-FINALLY
+
+public class Main2
+{
+public static void main(String[] args)
+{
+try
+{
+int[] myNo= {1,2,3};
+System.out.println(myNo[10]);
+}
+catch(Exception e)
+{
+System.out.println("Something went wrong.");
+}
+finally
+{
+System.out.println("The 'try catch' is fineshed.");
+}
+}
+}
+
+EXP 10:
+
+Main.java
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import aj1.Employee;
+import aj1.EmpQ;
+public class Main {
+public static void main(String[] args)throws IOException {
+// TODO Auto-generated method stub
+System.out.println("Welcome to Employee Management System");
+BufferedReader br=new BufferedReader(new
+InputStreamReader(System.in));
+while (true)
+{
+System.out.println("-------------------------");
+System.out.println("PRESS 1 to ADD Employee");
+System.out.println("PRESS 2 to Delete Employee");
+System.out.println("PRESS 3 to display Employee");
+System.out.println("PRESS 4 to exit");
+System.out.println("-------------------------");
+int c=Integer.parseInt(br.readLine());
+if(c==1)
+{
+System.out.println("Enter Employee name :");
+String name=br.readLine();
+System.out.println("Enter Employee phone : ");
+String phone=br.readLine();
+System.out.println("Enter Employee city :");
+String city=br.readLine();
+Employee st=new Employee (name, phone, city);
+boolean ans=EmpQ.insertEmployeeToDB(st);
+if (ans) {
+System.out.println("Employee added successfully");
+}
+else
+{
+System.out.println("Something went wrong");
+}
+System.out.println(st);
+}
+else if(c==2)
+{
+System.out.println("Enter the Employee id to delete");
+int empId=Integer.parseInt(br.readLine());
+boolean f=EmpQ.deleteEmployee(empId);
+if(f)
+{
+System.out.println("Deleted ");
+}
+else
+{
+System.out.println("Something went wrong");
+}
+}
+else if(c==3)
+{
+EmpQ.showAllEmployee();
+}
+else if(c==4)
+{
+break;
+}
+else
+{
+}
+}
+System.out.println("Thank you so much");
+}
+}
+
+CP.java
+
+package aj1;
+import java.sql.Connection;
+import java.sql.DriverManager;
+public class CP {
+static Connection con;
+public static Connection createC() {
+try {
+// load the driver
+Class.forName("com.mysql.jdbc.Driver");
+// create the connection...
+String user = "root";
+String password ="Indu@2221";
+String url = "jdbc:mysql://localhost:3306/Allhad";
+con = DriverManager.getConnection(url, user, password);
+} catch (Exception e) {
+e.printStackTrace();
+}
+return con;
+}
+}
