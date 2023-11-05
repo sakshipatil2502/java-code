@@ -1,0 +1,625 @@
+//TRIAL
+
+console.log("Welcome to JavaScript Lab")
+
+document.write("Welcome to JavaScript Lab")
+
+document.write(" <h1> Welcome to JavaScript Lab </h1> ")
+
+
+prompt("Enter your Name ")
+
+prompt("Enter the first number")
+
+var name = prompt("Enter your Name ")
+
+console.log("Good Morning"+ " " + name)
+
+document.write("Good Morning" + name)
+
+var num1 = prompt("Enter First Number")
+
+var num2 = prompt("Enter Second Number")
+
+var sum = num1 + num2
+
+document.write("Sum of Two numbers is: " + sum)
+
+parseInt()
+
+
+var num1 = parseInt( prompt("Enter First Number") )
+
+var num2 = parseInt( prompt("Enter Second Number") ) 
+
+var sum = num1 + num2
+
+document.write("Sum of Two numbers is: " + sum)
+
+
+//Experiment 1: JavaScript program to calculate area of triangle, area of rectangle and area of circle
+
+
+var base = parseInt(prompt("Enter the base: "));
+var height = parseInt(prompt("Enter the height: "));
+
+//Calculating the area
+var area = (base * height) / 2;
+
+//Display Output
+
+console.log("Base: " + base);
+console.log("Height: " + height);
+console.log("The area of the triangle is " + area);
+
+
+
+//(EXP-2) program to generate a multiplication table
+
+// take input from the user
+const number = parseInt(prompt('Enter an integer: '));
+
+//creating a multiplication table
+for(let i = 1; i <= 10; i++) {
+
+    // multiply i with number
+    const result = i * number;
+
+    // display the result
+
+    console.log(`${number} * ${i} = ${result}`);
+    document.write(`${number} * ${i} = ${result} <br>`);
+
+}
+
+
+//Experiment 3a. Write a program to reverse a string
+
+function reverseString(str) {
+
+    // empty string
+    let newString = "";
+    for (let i = str.length - 1; i >= 0; i--) {
+        newString += str[i];
+    }
+    return newString;
+}
+
+// take input from the user
+const string = prompt('Enter a string: ');
+
+const result = reverseString(string);
+console.log(result);
+
+
+// Experiment 3b. Program to replace a character of a string
+
+const string = 'Mr Red has a red house and a red car';
+
+// replace the characters
+const newText = string.replace('red', 'blue');
+
+// display the result
+console.log(newText);
+
+//// Experiment 3C. Program to CHECK PALINDROME STRING
+
+const prompt = require('prompt-sync')();
+
+function revStr(input) {
+    return input.split('').reverse().join('');
+}
+
+function isPalin(input) {
+    let original = input.toLowerCase();
+    console.log("Original String is : "+original);
+
+    let reversed = revStr(original).toLowerCase();
+    console.log("Reversed String is : "+reversed);
+    
+    if (original===reversed) {
+        console.log("String Is Palindrome");
+    } else {
+        console.log("String Is Not Palindrome");
+    }
+
+}
+
+let str = prompt("Enter A String : ")
+
+isPalin(str);
+
+//OUTPUT
+Enter A String : omkar
+Original String is : omkar
+Reversed String is : rakmo
+String Is Not Palindrome
+
+Enter A String : madam
+Original String is : madam
+Reversed String is : madam
+String Is Palindrome
+
+//Experiment No 4
+
+//Method 1: Using toUpperCase()
+const string1 = 'JavaScript Program';
+const string2 = 'javascript program';
+
+const result = string1.toUpperCase() === string2.toUpperCase();
+
+if(result) {
+    console.log('The strings are similar.');
+} else {
+    console.log('The strings are not similar.');
+}
+
+Output
+The strings are similar.
+
+//Method 2: JS String Comparison Using RegEx
+const string1 = 'JavaScript Program';
+const string2 = 'javascript program';
+
+const pattern = new RegExp(string1, "gi");
+
+const result = pattern.test(string2)
+
+if(result) {
+    console.log('The strings are similar.');
+} else {
+    console.log('The strings are not similar.');
+}
+
+Output
+The strings are similar.
+
+//Method 3: Using localeCompare()
+const string1 = 'JavaScript Program';
+const string2 = 'javascript program';
+
+const result = string1.localeCompare(string2, undefined, { sensitivity: 'base' });
+
+if(result == 0) {
+    console.log('The strings are similar.');
+} else {
+    console.log('The strings are not similar.');
+}
+
+Output
+The strings are similar.
+
+
+//EXPERIMENT NO 5
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Countdown Timer</title>
+</head>
+
+<body>
+
+    <div id="timer"></div>
+
+    <script>
+        
+        let countDownDate = new Date().getTime() + 24 * 60 * 60 * 1000;
+
+        let x = setInterval(function () {
+
+            let now = new Date().getTime();
+
+            let timeLeft = countDownDate - now;
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((timeLeft / 1000 / 60) % 60);
+            const seconds = Math.floor((timeLeft / 1000) % 60);
+
+            var a=document.getElementById("timer");
+            a.innerHTML= days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+            if (timeLeft < 0) {
+                clearInterval(x);
+                a.innerHTML='CountDown Finished';
+            }
+        }, 2000);
+    </script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+//Program 6a: Program to remove specific element from Array Object
+
+
+
+function remove_array_element(array, n)
+ {
+   var index = array.indexOf(n);
+   if (index > -1) {
+    array.splice(index, 1);
+}
+   return array;
+ }
+
+console.log(remove_array_element([2, 5, 9, 6], 5));
+
+
+// Exp 6 b: program to check if an array contains a specified value
+
+const array = ['you', 'will', 'learn', 'javascript'];
+
+const hasValue = array.includes('javascript');
+
+// check the condition
+if(hasValue) {
+    console.log('Array contains a value.');
+} else {
+    console.log('Array does not contain a value.');
+}
+
+
+//Exp 6c: Program to empty an array
+//Method 1
+
+function emptyArray(arr) {
+
+    // substituting new array
+    arr = [];
+    
+    return arr;
+}
+
+const array = [1, 2 ,3];
+console.log(array);
+
+// call the function
+const result = emptyArray(array);
+console.log(result);
+
+
+//Exp 6c: Program to empty an array: Method 2
+
+function emptyArray(arr) {
+
+    // substituting new array
+    arr.splice(0, arr.length);
+    
+    return arr;
+}
+
+const array = [1, 2 ,3];
+console.log(array);
+
+// call the function
+const result = emptyArray(array);
+console.log(result);
+
+
+//Exp 6c: program to empty an array: Method 3
+
+function emptyArray(arr) {
+
+    // setting array length to 0
+    arr.length = 0;
+    
+    return arr;
+}
+
+const array = [1, 2 ,3];
+console.log(array);
+
+// call the function
+const result = emptyArray(array);
+console.log(result);
+
+
+//EXP 7A HTML CODE
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+   <h1>Experiment NO7 Title</h1> 
+   <h2>Roll No:1234 ABCDEFGH</h2>
+   <script src="practical.js"></script>
+</body>
+
+</html>
+
+
+
+
+//program to append an object to an array and check if object is an array
+(js code)
+
+function insertObject(arr,obj){
+arr.push(obj);
+document.writeln();
+document.writeln(arr);
+}
+
+function checkObject(arr){
+ const result = Array.isArray(arr);
+
+ if(result){
+    document.write(`[${arr}] is an array.`);
+ }
+ else{
+    document.writeln("{arr} is not an array");
+ }
+}
+
+let array=[1,2,3];
+let object ={x:12,y:8};
+
+checkObject(object);
+document.writeln("<br>");
+
+insertObject(array,object);
+
+// Experiment 7B: Program to Add Element in Array using Splice Method
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Adding object in array</title>
+	<style>
+		body {
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+	<h1 style="color: green">Experiment 7b</h1>
+        <h3>Program to Add Element in Array using Splice Method </h3>
+
+	<p>Click the button to add new elements to the array.</p>
+
+	<button onclick="spliceFunction()">Add Elements</button>
+
+	<p id="event_tag"></p>
+
+	<script>
+		var list = ["HTML", "CSS", "JavaScript"];
+		document.getElementById("event_tag").innerHTML = list;
+
+		function spliceFunction() {
+			list.splice(2,0,"Angular", "SQL", );
+			document.getElementById("event_tag").innerHTML = list;
+		}
+	</script>
+
+</body>
+
+</html>
+
+
+// Exp 8a: Perform union operation-contain elements of both sets
+
+function union(a, b) {
+    let unionSet = new Set(a);
+    for (let i of b) {
+        unionSet.add(i);
+    }
+    return unionSet
+}
+
+// two sets of fruits
+const setA = new Set(['apple', 'mango', 'orange']);
+const setB = new Set(['grapes', 'apple', 'banana']);
+
+const result = union(setA, setB);
+
+console.log(result);
+
+
+// Exp 8b: Perform intersection operation - Elements of set a that are also in set b
+
+function intersection(setA, setB) {
+    let intersectionSet = new Set();
+
+    for (let i of setB) {
+        if (setA.has(i)) {
+            intersectionSet.add(i);
+        }
+    }
+    return intersectionSet;
+}
+
+// two sets of fruits
+const setA = new Set(['apple', 'mango', 'orange']);
+const setB = new Set(['grapes', 'apple', 'banana']);
+
+const result = intersection(setA, setB);
+
+console.log(result);
+
+
+// Exp 8c: Perform difference operation- Elements of set a that are not in set b
+function difference(setA, setB) {
+    let differenceSet = new Set(setA)
+    for (let i of setB) {
+        differenceSet.delete(i)
+    }
+    return differenceSet
+}
+
+// two sets of fruits
+const setA = new Set(['apple', 'mango', 'orange']);
+const setB = new Set(['grapes', 'apple', 'banana']);
+
+const result = difference(setA, setB);
+
+console.log(result);
+
+
+//(HTML)Experiment 9a: JavaScript program to change background color of Webpage On mouse over event
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment-9</title>
+
+    <script src="Exp9.js"> 
+    </script>
+</head>
+<body>
+    <h1 id="head1" onmouseover="changeColor1()" onmouseout="changeColor2()"> Experiment-9</h1>
+    <h2> JavaScript program to change background color of Webpage On mouse over event</h2>
+    <p>We are using mousever Event to Change the Background Color</p>
+    
+    
+</body>
+</html>
+
+
+//(JS)Experiment 9a: JavaScript program to change background color of Webpage On mouse over event
+function changeColor1() {
+    document.body.style.backgroundColor = "red";
+}
+function changeColor2() {
+    document.body.style.backgroundColor = "yellow";
+}
+
+
+//Experimen-9b: Program to change Background color using onfocus event
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment-9b</title>
+</head>
+
+<body>
+    <h1>Experimen-9b</h1>
+    
+    <p> In this Program we are going to change the Background color of document when onfocus event is occured</p>
+    <h2>Student Information Form</h2>
+    <form id="myForm">
+       <label> Student Name: <input type="text" id="myInput">  </label>
+    </form>
+</body>
+<script src="Exp9b.js"></script>
+
+</html>
+
+//EXP 10(MAIN_PAGE)
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/Exp10a.js"></script>
+
+</head>
+<body>
+    <h1>Experiment-10</h1>
+    <h2>Form Validation Example</h2>
+    <br>
+    <h1>Sign Up Form</h1>
+    <form name="myForm"  action="/thankyou.html" onsubmit="return validate()" >
+        <label for="fname"> First name</label>
+        <input type="text" id="fname" name="fname" placeholder="Enter First Name" required>
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lname" placeholder="Enter Last Name" >
+        <br>
+        <br>
+        <label for="usremail">Email</label>
+        <input type="email" id="usremail" name="usremail" placeholder="Enter Email here" >
+        <label for="usrpassword">Password</label>
+        <input type="password" id="usrpassword" name="usrpassword" placeholder="Enter Password" >
+        <br>
+        <br>
+        <p>Gender ?</p>
+        <label for="male"> Male</label>
+        <input type="radio" id="male" name="option">
+        <label for="female"> Female </label>
+        <input type="radio" id="female" name="option">
+        <p></p>
+        
+        <label for="usrmobile">Mobile Number</label>
+        <input type="text" id="usrmobile" name="usrmobile" placeholder="Mobile Number" required>
+        <p></p>
+        <input type="submit" name="" id="" value="submit">
+    </form>
+
+</body>
+
+</html>
+
+//(PAGE2.TXT)This page will be opened after user clicks the submit button
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acknowledge</title>
+</head>
+<body>
+    <h1>Thank you..! </h1>
+    <h2> Your Registration is Completed</h2>
+    
+</body>
+</html>
+
+
+//JavaScript File
+function validate() {
+    var firstName = document.myForm.fname.value;
+    var lastName = document.myForm.lname.value;
+    var userpassword = document.myForm.usrpassword.value;
+    var usrmobile = document.myForm.usrmobile.value;
+    
+    console.log(firstName);
+    console.log(lastName);
+    console.log(userpassword);
+    console.log(usrmobile);
+
+    if (firstName == null || firstName == "" || firstName.length<3 ) {
+        alert("First Name can't be blank or Less than 3 Charecter");
+        document.myForm.fname.focus();
+        return false;
+    }
+    if (lastName == null || lastName == "") {
+        alert("Last Name can't be blank");
+        document.myForm.lname.focus();
+        return false;
+    }
+    if (userpassword.length < 6) {
+        alert("Password must be at least 6 characters long.");
+        document.myForm.usrpassword.focus();
+        return false;
+    }
+    if (isNaN(usrmobile)) {
+        alert("Enter Numeric value only");
+        document.myForm.usrmobile.focus();
+        return false;
+    }
+    return true;
+    
+}
